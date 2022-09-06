@@ -1,0 +1,22 @@
+Algorithme1
+VAR
+    ch:= CHAR;
+    nbrl,nbrw: INTEGER :=1;
+    nbrv :INTEGER :=0;
+BEGIN
+  READ(ch)
+  WHILE (ch<>".") DO
+    IF (ch==" ") THEN
+        nbrw:=nbrw+1;
+        nbrl:=nbrl+1;
+    ELSE_IF (ch in ["a","e","i","u","y","o"]) THEN
+        nbrv:=nbrv+1;
+        nbrl:=nbrl+1;
+    ELSE
+        nbrl:=nbrl+1;
+    END_IF
+  END_WHILE
+  write("the lengthy of a sentence is :",nbr)
+  write("the number of word in the sentence is :",nbrw)
+  write("the number of vowel in the sentence is ;",nbrv)
+END
