@@ -1,0 +1,16 @@
+Algorithme part2
+Var
+Tab1 , Tab2 : Array Of Integer
+i, j , sum1 , sum2 :integer :=0
+
+isTrue := false
+Begin
+for(i=0;i<Tab1.length;i++)
+isTrue = false
+for (j=0;j<Tab2.length;j++)	
+if (Tab1[i] = Tab2[j])	
+isTrue:=true
+end for
+if(isTrue == false)
+sum = sum + Tab1[i]
+end for
