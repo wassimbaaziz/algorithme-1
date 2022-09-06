@@ -1,0 +1,43 @@
+ALGORITHM part2htab
+VAR
+    tab1,tab2,tab3 :array-OF integer[50];
+    count,i,j,sum1,sum2 : integer:=0;
+    istrue  : BOOLEAN;
+    htab: HASH_TABLE<integer,integer>
+BEGIN
+
+ //parcourt tab1 
+
+     FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+         
+          IF  (htab.lookup(tab1[i])=true) THEN
+               count:=htab.get(tab1[i]);
+            htab.insert(tab1[i],count+1)
+          ELSE
+            htab.insert(tab1[i],1);
+          END_IF
+     END_FOR 
+
+ //parcourt tab2
+
+    FOR j FROM 0 TO tab2.length-1 STEP 1  DO
+          IF  (htab.lookup(tab2[j])=true) THEN
+               count:=htab.get(tab2[j]);
+            htab.insert(tab2[j],count+1)
+          ELSE
+            htab.insert(tab2[j],1);
+          END_IF    
+     END_FOR 
+
+ //parcourt tab3
+        tab3:= htab.getkeys();
+         FOR i FROM 0 TO tab3.length-1 STEP 1  DO
+          IF  (htab.get(tab3[i])=1) THEN
+             sum1=sum1+tab[i];
+            ELSE
+             sum2=sum2+tab3[i]*2;
+          END_IF
+        END_FOR 
+     write("somme of distinct elements is :",sum1);
+     write("the sum of overlapping elements is :",sum2);
+end
