@@ -1,0 +1,45 @@
+ALGORITHM produit scalaire
+VAR
+  v1,v2 : ARRAY_OF integer[50];
+  i,j,n,m,ps : INTEGER; 
+BEGIN
+  // Read the size
+ Read(n);
+  Read(m);
+     // Read elements1
+
+   FOR i FROM 0 TO n-1 STEP 1  DO
+       Read(v1[i]);
+   END_FOR
+  // Read elements2
+
+  FOR j FROM 0 TO m-1 STEP 1  DO
+       Read(v2[j]);
+   END_FOR
+// calcule produit scalaire et appelle Fscalaire
+IF (v1.length<>v2.length) THEN
+    write("v1 and v2 are not orthogonal");
+ELSE
+    ps:= Fscalaire(v1,v2);
+END_IF
+
+IF (ps=0) THEN
+    write("le deux vecteur sont orthogonale ");
+  
+   ELSE
+      write("le deux vecteur ne sont pas orthogonal ");
+END_IF
+end
+//declaration de fonction 
+FUNCTION Fscalaire(v1,v2) : INTEGER
+VAR
+      v1,v2 : ARRAY_OF integer[50];
+      sum,i: integer:=0;
+BEGIN
+   while (i<v1.length)DO
+   
+   sum=sum + v1[i]*v2[i];
+   i:=i+1;
+   END_WHILE
+    RETURN sum ;
+END
