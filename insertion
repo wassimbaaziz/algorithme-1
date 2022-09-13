@@ -1,0 +1,15 @@
+ALGORITHM trie par insertion
+VAR
+  tab: ARRAY_OF integer[50];
+  i,j,temp : INTEGER:=0; 
+BEGIN
+      FOR i FROM 1 TO tab.length-1 STEP 1  DO
+      j=i-1;
+     temp=tab[i];
+      while( j>=0 &&  tab[j]>temp) DO
+      tab[j+1]= tab[j]
+     j=j-1;
+      END_WHILE
+      tab[j+1]=temp;
+    END_FOR
+END
